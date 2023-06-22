@@ -5,5 +5,17 @@
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html"
+    },
+    "permissions": [
+        "activeTab",
+        "contextMenus",
+        "scripting",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "icons": {
+        "48": "images/message.png"
     }
 }
