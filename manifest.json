@@ -1,5 +1,5 @@
 {
-    "name": "HELLO WORLD",
+    "name": "Quick GPT",
     "description": "chrome拡張機能の基礎",
     "version": "1.0",
     "manifest_version": 3,

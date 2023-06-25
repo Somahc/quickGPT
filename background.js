@@ -11,22 +11,21 @@ chrome.runtime.onInstalled.addListener(function() {
     });
   });
   
-  /**
-    * メニューが選択されたときの処理
-    * 選択されたメニューが関数の引数に渡される。
-    * 複数のメニューを登録した場合は、item.menuItemIdでクリックされたメニューが取得できる
-    */
+
 chrome.contextMenus.onClicked.addListener((info, tab) => {
     switch (info.menuItemId) {
         case "askChatGpt":
             chrome.scripting.executeScript({
                 target: { tabId: tab.id },
                 function: askChatGPT,
+                args: [info, tab],
             });
             break;
     }
 });
 
-const askChatGPT = () => {
+function askChatGPT(info, tab) {
     console.log("askChatGPTが実行されました");
-}
+    let selection_text = info.selectionText;
+    console.log(selection_text);
+  }
